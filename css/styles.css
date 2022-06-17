@@ -1,3 +1,41 @@
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Playfair Display',;
+    src: url('.../fonts/playfairDisplay-bold.ttf') format ('truetype');
+    src: local('PlayfairDisplay')
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway') 
+    url('.../fonts/Raleway-Regular.ttf') format('truetype');
+}
+
+
+
+
+:root {
+    --color-primary: #fff;
+    --color-accent: #d4c17f;
+    --color-background-primary: #242b33;
+
+    --font-famaly-primary: 'Raleway', sans-serif;
+    --font-family-title: 'Playfair Display', sans-serif;
+
+}
+ /* Скачуэм текс, розарзывуэм, создаэм папку ы туди завантажуэм в ф, щоб вын був на одному рывны з файлом */
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+
+/* UI compona */
+
 .button {
     padding: 10px 40px;
     background-color: #d4c17f;
