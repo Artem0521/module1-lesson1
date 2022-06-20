@@ -1,45 +1,87 @@
-
 /* Fonts */
-
 @font-face {
-    font-family: 'Playfair Display',;
-    src: url('.../fonts/playfairDisplay-bold.ttf') format ('truetype');
-    src: local('PlayfairDisplay')
+    font-family: 'Raleway';
+    src: local('Raleway'),
+        url('../fonts/Raleway-Regular.woff2') format('woff2'),
+        url('../fonts/Raleway-Regular.woff') format('woff'),
+        url('../fonts/Raleway-Regular.ttf') format('truetype'),
+        url('../fonts/Raleway-Regular.svg#Raleway-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Raleway';
-    src: local('Raleway') 
-    url('.../fonts/Raleway-Regular.ttf') format('truetype');
+    src: local('Raleway'),
+        url('../fonts/Raleway-Bold.woff2') format('woff2'),
+        url('../fonts/Raleway-Bold.woff') format('woff'),
+        url('../fonts/Raleway-Bold.ttf') format('truetype'),
+        url('../fonts/Raleway-Bold.svg#Raleway-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
-
-
-
+@font-face {
+    font-family: 'Playfair Display';
+    src: local('Playfair Display'),
+        url('../fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
+        url('../fonts/PlayfairDisplay-Bold.woff') format('woff'),
+        url('../fonts/PlayfairDisplay-Bold.ttf') format('truetype'),
+        url('../fonts/PlayfairDisplay-Bold.svg#PlayfairDisplay-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* Variables */
 :root {
     --color-primary: #fff;
     --color-accent: #d4c17f;
+
     --color-background-primary: #242b33;
 
-    --font-famaly-primary: 'Raleway', sans-serif;
-    --font-family-title: 'Playfair Display', sans-serif;
-
+    --font-family-primary: 'Raleway', sans-serif;
+    --font-family-title: 'Playfair Display', serif;
 }
- /* Скачуэм текс, розарзывуэм, создаэм папку ы туди завантажуэм в ф, щоб вын був на одному рывны з файлом */
+
+/* Base */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: 'Raleway', sans-serif;
+    color: var(--color-primary);
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: var(--font-family-primary);
+    font-weight: 400;
+    background-color: var(--color-background-primary);
 }
 
 
+::selection {
+    color: var(--color-primary);
+    background-color: var(--color-accent);
+}
 
-
-/* UI compona */
+/* UI */
+.title {
+    color: var(--color-accent);
+    font-family: var(--font-family-title);
+    font-size: 36px;
+    line-height: 1.3333;
+}
 
 .button {
     padding: 10px 40px;
-    background-color: #d4c17f;
     color: #fff;
+    background-color: var(--color-accent);
     border: 1px solid transparent;
 }
 
@@ -47,15 +89,42 @@ body {
     box-shadow: 0px 0px 2px 2px rgba(212, 193, 127, 0.2);
 }
 
-.button:focus {
-    color: blue;
+.button:active {
+    box-shadow: 0px 0px 4px 4px rgba(212, 193, 127, 0.4);
 }
 
-.menu-link,
-.submenu-link {
-    color: #fff;
+/* Header */
+.header {}
+
+/* Menu */
+.link {
+    color: var(--color-primary);
+    font-size: 14px;
+    line-height: 1.15;
+    text-decoration: none;
 }
-.menu-item:hover,
-.submenu-item:hover {
-    color:#d4c17f ;
+
+.link:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+/* Submenu */
+.submenu {
+    display: none;
+}
+
+.header-menu-item:focus-within .submenu {
+    display: block;
+}
+
+/* Hero section */
+.hero-title {
+    font-size: 48px;
+    text-align: center;
+}
+
+/* Footer */
+.footer-contacts {
+    font-style: normal;
 }
